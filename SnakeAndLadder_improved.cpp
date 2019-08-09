@@ -7,7 +7,7 @@
 #include<cstdlib>
 #include<string>
 #include <sstream>
-#include<graphics.h>
+//#include<graphics.h>
 #include <fstream>
 using namespace std;
 map<int, int> Snakes;
@@ -42,7 +42,7 @@ void Record_file(string winner)
 
     ofstream  rec;
     rec.open("Winner.txt",ios::app);
-    rec<<"\n"<<winner;
+    rec<<"\t"<<winner;
     rec.close();
 
 }
@@ -161,8 +161,8 @@ int main()
 {
 
 
-    system("COLOR DF");
-        int gd = DETECT, gm;
+    system("COLOR F1");
+    /*     int gd = DETECT, gm;
     initgraph(&gd, &gm, "");
     setbkcolor(WHITEONBLACK);
     int x = 10;
@@ -181,7 +181,7 @@ int main()
     getch();
 
 
-    closegraph();
+    closegraph(); */
     Player p1,p2;
     string Player1,Player2;
     cout<<endl<<"Enter Player 1's NAME "<<endl;
@@ -234,5 +234,6 @@ winner=(Player1_pos>=100)?Player1:Player2;
 cout<<" ************* "<<winner<< " WIN"<<"  ************"<<endl;
 Record_file(winner);
 Display_Winners();
+getch();
 return 0;
 }
